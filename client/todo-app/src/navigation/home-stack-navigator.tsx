@@ -1,0 +1,23 @@
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import React from 'react'
+import { HomeStackParamList } from './types'
+import HomeScreen from '@/untils/screens/home-screen';
+import EditTaskScreen from '@/untils/screens/edit-task-screen';
+
+
+const Stack = createNativeStackNavigator<HomeStackParamList>()
+
+const HomeStackNavigator = () => {
+  return (
+    <Stack.Navigator>
+    <Stack.Screen name='Home' component={HomeScreen} options={{
+        headerShown:false,
+    }} />
+    <Stack.Screen name='EditTask' component={EditTaskScreen} options={{
+        headerShown:false,
+    }}  />
+  </Stack.Navigator>
+  )
+}
+
+export default HomeStackNavigator
